@@ -1,0 +1,14 @@
+.App{
+    h1{
+        font-size: $threeRem;
+        background-color: #154d98;
+        padding: $oneRem;
+        color: $whiteColor;
+        text-align: $atCenter;
+        width: $hundredPercent;
+    }
+    .container{
+        width: 70%;
+        margin: 10rem auto;
+    }
+}

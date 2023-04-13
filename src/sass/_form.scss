@@ -1,0 +1,46 @@
+.input, button{
+    @include btnInput2;
+}
+
+.save-btn{
+    width: $hundredPercent;
+    background-color: $primaryColor;
+    color: $whiteColor;
+    cursor: $cursorPointer;
+    padding: 0.7rem;
+}
+
+.form-container{
+    .go-back{
+        button{
+            align-items: $atCenter;
+            display: $flexContainer;
+            color: $primaryColor;
+            cursor: $cursorPointer;
+        }
+    }
+    .form{
+        @include flexColumn;
+        gap: $oneRem;
+        width: 50%;
+        margin: auto;
+        header{
+            text-align: $atCenter;
+        }
+        .gender-field{
+            display: $flexContainer;
+            gap: $threeRem;
+            div{
+                display: $flexContainer;
+                align-items: $atCenter;
+                gap: $oneRem;
+            }
+            span{
+                margin-right: 5rem;
+            }
+        }
+        .input-field{
+            @include flexColumn;
+        }
+    }
+}

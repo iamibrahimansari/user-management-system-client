@@ -1,0 +1,72 @@
+.add-user{
+    margin-bottom: $twoRem;
+    button{                
+        @include btnInput;                
+        font-family: inherit;
+        font-weight: 500;
+        color: $dodgerblueColor;
+    }
+}
+
+.user-list{
+    overflow-x: auto;
+    .table{
+        width: $hundredPercent;
+        text-align: $atCenter;
+        border-collapse: collapse;
+        thead{
+            background-color: $primaryColor;
+        }
+        th, td{
+            padding: $pointFiveRem;
+            padding: $oneRem;
+        }
+        th{
+            color: $whiteColor;
+        }
+        td{
+            color: #000;
+        }
+        tbody{
+            tr{
+                border-bottom: 1px solid #aaa;
+            }
+            tr:hover{
+                &:not(:last-child){
+                    background-color: $secondaryColor;
+                    td{
+                        color: $whiteColor;
+                    }
+                }
+            }
+            tr:last-child{
+                background-color: $secondaryColor;
+                td{
+                    color: $whiteColor;
+                }
+            }
+        }
+        tr{
+            position: relative;
+            .action{
+                position: absolute;
+                top: 50%;
+                right: $zero;
+                transform: translateY(-50%);
+                @include flexBox;
+                gap: $oneRem;
+                button{
+                    @include flexBox;
+                    font-size: $twoRem;
+                    @include btnInput;                
+                    &:first-child{
+                        color: blue;
+                    }
+                    &:last-child{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

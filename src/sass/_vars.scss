@@ -1,0 +1,42 @@
+$onePointSixRem: 1.6rem;
+$zero: 0;
+$hundredPercent: 100%;
+$oneRem: 1rem;
+$threeRem: 3rem;
+$whiteColor: #fff;
+$atCenter: center;
+$twoRem: 2rem;
+$pointFiveRem: 0.5rem;
+$noValue: none;
+$boxShadowWithPoint4Opacity: 0 0 1px 1px rgba(0, 0, 0, 0.4);
+$cursorPointer: pointer;
+$dodgerblueColor: dodgerblue;
+$primaryColor: #150928;
+$flexContainer: flex;
+$secondaryColor: #154d98;
+
+@mixin flexBox{
+    display: $flexContainer;
+    justify-content: $atCenter;
+    align-items: $atCenter;
+}
+
+@mixin btnInput{
+    padding: $pointFiveRem;
+    background-color: $whiteColor;
+    border: $noValue;
+    box-shadow: $boxShadowWithPoint4Opacity;
+    cursor: $cursorPointer;
+}
+
+@mixin btnInput2{
+    padding: $pointFiveRem;
+    border: $noValue;
+    outline: $noValue;
+    box-shadow: $boxShadowWithPoint4Opacity;
+}
+
+@mixin flexColumn{
+    display: $flexContainer;
+    flex-direction: column;
+}

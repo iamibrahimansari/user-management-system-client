@@ -1,0 +1,17 @@
+*{
+    margin: $zero;
+    padding: $zero;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: $onePointSixRem;
+    background-color: #f7f7f7;
+}
