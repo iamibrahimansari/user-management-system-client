@@ -4,12 +4,14 @@ import {useNavigate} from "react-router-dom";
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+const PORT = process.env.PORT || 3500;
+
 const TableBodyRow = ({navigateOnUpdateNewUserForm, _id, name, email, gender, profession}) =>{
     const handleDelete = async () =>{
         try{
             const result = confirm('Do you really want to delete?');
             if(result){
-                const response = await axios.delete(`http://localhost:8080/user/delete/${_id}`);
+                const response = await axios.delete(`http://localhost:${PORT}/user/delete/${_id}`);
             }
         }catch(error){
             console.error(error);
@@ -66,7 +68,7 @@ const Home = ({records, setRecords, currentUser, setCurrentUser}) => {
     useEffect(() =>{
         const getUsers = async () =>{
             try{
-                const users = await axios.get('http://localhost:8080/user/users');
+                const users = await axios.get(`http://localhost:${PORT}/user/users`);
                 setRecords(users.data);
             }catch(error){
                 console.error(error);
@@ -86,7 +88,7 @@ const Home = ({records, setRecords, currentUser, setCurrentUser}) => {
     };
     const navigateOnUpdateNewUserForm = async _id => {
         try{
-            const response = await axios.get(`http://localhost:8080/user/${_id}`);
+            const response = await axios.get(`http://localhost:${PORT}/user/${_id}`);
             setCurrentUser(response.data);
             navigate(
                 "/update-user", 
