@@ -3,8 +3,6 @@ import {useNavigate, useLocation} from 'react-router-dom';
 import {useState} from 'react';
 import axios from 'axios';
 
-const PORT = process.env.PORT || 3500;
-
 const data = [
     {
         type: 'text',
@@ -58,7 +56,7 @@ const UserForm = ({records, setRecords, currentUser, setCurrentUser}) => {
         event.preventDefault();
         if(btnText === "Save"){
             try{
-                const response = await axios.post(`http://localhost:${PORT}/user/create`, currentUser);
+                const response = await axios.post(`https://ums-api.onrender.com/user/create`, currentUser);
                 const user = response.data;
                 setRecords([...records, user]);
                 alert('User Successfully Created');
@@ -67,7 +65,7 @@ const UserForm = ({records, setRecords, currentUser, setCurrentUser}) => {
             }
         }else{
             try{
-                const response = await axios.put(`http://localhost:${PORT}/user/update`, currentUser);
+                const response = await axios.put(`https://ums-api.onrender.com/user/update`, currentUser);
                 const editedUser = response.data;
                 const temp = records;
                 const index = temp.findIndex(temp_ => editedUser._id === temp_._id);
